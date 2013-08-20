@@ -1,0 +1,64 @@
+::-webkit-scrollbar { 
+  display: none;
+}
+
+a {
+  color: #fff200;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+html, body, div.container, div.row, #index, #about, #skills, #contact {
+  height: 100%;
+  min-height: 100%;
+}
+
+div.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+div.row {
+  background: url(../img/dot-pattern.png);
+  z-index: 2;
+  position: relative;
+}
+
+div.content {
+  background: #282828;
+  background: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  padding: 10px 20px;
+  float: left;
+  clear: both;
+}
+
+#index, #about, #skills, #contact {
+  z-index: 1;
+  position: relative;
+}
+#index {
+  /*margin-top: -20px;*/
+  background: url(../img/bg-1.jpg) fixed;
+  background-size: cover;
+}
+#about h1, #contact h1 {
+  float: left;
+}
+#skills {
+  background: url(../img/bg-2.jpg) fixed;
+  background-size: cover;
+}
+#contact {
+  /*background: yellow;*/
+}
+
+div.container h1 {
+  float: right;
+  background: #fff200;
+  background: rgba(255, 242, 0, 0.8);
+  color: #282828;
+  /*font-family: 'Source Sans Pro', sans-serif;*/
+  padding: 10px 20px;
+  line-height: 35px;
+}

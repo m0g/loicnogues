@@ -1,0 +1,13 @@
+<% posts.each do |post| %> 
+  <div class="row">
+    <div class="col-md-12" id="<%=post.name %>">
+      <h1><%=post.title %></h1>
+
+      <% unless post.content.nil? %>
+      <div class="content">
+        <%=post.content %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+<% end %>

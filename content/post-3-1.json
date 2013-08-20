@@ -1,0 +1,13 @@
+{
+	"id": 3,
+	"title": "Skills",
+  "name": "skills",
+	"content": [
+		{ "name": "Javascript/jQuery", "level": "70"  },
+		{ "name": "HTML5/CSS3", "level": "60"  },
+		{ "name": "Wordpress", "level": "70"  },
+		{ "name": "PHP", "level": "80"  },
+		{ "name": "Ruby", "level": "40"  },
+		{ "name": "Linux & Server Administration", "level": "70"  }
+	]
+}

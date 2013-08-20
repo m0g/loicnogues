@@ -1,0 +1,42 @@
+{
+	"posts": [
+		{
+			"id": 1
+		},
+		{
+			"id": 2
+		},
+		{
+			"id": 3
+		},
+		{
+			"id": 4
+		}
+	],
+	"socials": [
+		{
+			"name": "facebook",
+			"link": "http://facebook.com/loic.nogues"
+		},
+		{
+			"name": "twitter",
+			"link": "http://twitter.com/m0g89"
+		},
+		{
+			"name": "flickr",
+			"link": "http://flickr.com/m0g"
+		},
+		{
+			"name": "linkedin",
+			"link": "http://www.linkedin.com/pub/lo%C3%AFc-nogues/3b/954/8b5"
+		},
+		{
+			"name": "github",
+			"link": "http://github.com/m0g"
+		},
+		{
+			"name": "skype",
+			"link": "skype:loic.nogues"
+		}
+	]
+}
