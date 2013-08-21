@@ -2,9 +2,17 @@ require 'sinatra'
 require 'json'
 
 class Skill
+  VARIABLES = [ :name, :level ]
+
   def initialize skill
     skill.each do |key, variable|
       instance_variable_set "@#{key}", variable
+    end
+  end
+
+  VARIABLES.each do |variable|
+    define_method variable do
+      instance_variable_get "@#{variable}"
     end
   end
 end
@@ -40,7 +48,6 @@ class Post
       instance_variable_get "@#{variable}"
     end
   end
-
 end
 
 get '/' do
