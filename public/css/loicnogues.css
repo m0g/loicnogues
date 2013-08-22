@@ -129,29 +129,29 @@ progress {
     .smartphone-hide { display: none }
     .desktop-hide { display: block; }
 
-    #container .page .content .inner-content ul.social-links li a.facebook {
+    div.container div.content ul.social-links li a.facebook {
       background: url(../img/icons/32/facebook.png);
     }
-    #container .page .content .inner-content ul.social-links li a.twitter {
+    div.container div.content ul.social-links li a.twitter {
       background: url(../img/icons/32/twitter.png);
     }
-    #container .page .content .inner-content ul.social-links li a.github {
+    div.container div.content ul.social-links li a.github {
       background: url(../img/icons/32/github.png);
     }
-    #container .page .content .inner-content ul.social-links li a.linkedin {
+    div.container div.content ul.social-links li a.linkedin {
       background: url(../img/icons/32/linkedin.png);
     }
-    #container .page .content .inner-content ul.social-links li a.flickr {
+    div.container div.content ul.social-links li a.flickr {
       background: url(../img/icons/32/flickr.png);
     }
-    #container .page .content .inner-content ul.social-links li a.skype {
+    div.container div.content ul.social-links li a.skype {
       background: url(../img/icons/32/skype.png);
     }
 
-    #container .page .content .inner-content ul.social-links li {
+    div.container div.content ul.social-links li {
       margin: 0 9px 0 0;
     }
-    #container .page .content .inner-content ul.social-links li a {
+    div.container div.content ul.social-links li a {
       /*-webkit-transform: scale(0.8);*/
       width: 32px;
       height: 32px;
@@ -161,9 +161,9 @@ progress {
       margin: 0 5%;
       width: 90%; 
     }
-    #container .page .content .inner-content { max-width: none; }
-    #container #skills .content .inner-content { width: auto; }
-    #container #skills .content .inner-content div.name {
+    div.container div.content { max-width: none; }
+    #container #skills .content { width: auto; }
+    #container #skills .content div.name {
       color: #282828;
       font-weight: bold;
       position: absolute;
@@ -173,22 +173,22 @@ progress {
 
 }
 /*@media only screen and (min-width: 801px) {
-    #about .content .inner-content { max-width: 500px; }
+    #about .content { max-width: 500px; }
 }*/
 
 @media only screen and (max-height: 250px) {
-  #container .page .content .inner-content ul.social-links  { display: none; }
-  #container #skills .content .inner-content div.line  { 
+  div.container div.content ul.social-links  { display: none; }
+  #container #skills .content div.line  { 
     float: right; 
     clear: none; 
     width: 50%;
   }
-  #container #skills .content .inner-content div.line:nth-child(-n+3)  { 
+  #container #skills .content div.line:nth-child(-n+3)  { 
     float: left; 
     clear: none; 
     width: 50%;
   }
-  #container #skills .content .inner-content div.name { font-weight: normal; }
+  #container #skills .content div.name { font-weight: normal; }
   .progress { width: 209px; margin: 10px 0; }
 
 }
@@ -203,4 +203,81 @@ progress {
 @media (max-width: 750px) {
   div.title { margin-top: 0 }
 }
+}
+
+div.container div.content ul.social-links { 
+  margin: 0; 
+  padding: 0; 
+}
+div.container div.content ul.social-links li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /*width: 48px;
+  height: 48px;*/
+  margin: 0 10px 10px 0;
+  float: left;
+}
+
+div.container div.content ul.social-links a {
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+div.container div.content ul.social-links li a.facebook {
+  background: url(../img/icons/48/facebook.png);
+}
+div.container div.content ul.social-links li a.twitter {
+  background: url(../img/icons/48/twitter.png);
+}
+div.container div.content ul.social-links li a.github {
+  background: url(../img/icons/48/github.png);
+}
+div.container div.content ul.social-links li a.linkedin {
+  background: url(../img/icons/48/linkedin.png);
+}
+div.container div.content ul.social-links li a.flickr {
+  background: url(../img/icons/48/flickr.png);
+}
+div.container div.content ul.social-links li a.skype {
+  background: url(../img/icons/48/skype.png);
+}
+div.container div.content ul.social-links a:hover {
+  /*-webkit-transform: scale(1.1);*/
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+  transition: transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+        -moz-transition: -moz-transform 0.2s ease-out;
+}
+
+@media only screen and (max-width: 800px) {
+  div.container div.content ul.social-links li a.facebook {
+    background: url(../img/icons/32/facebook.png);
+  }
+  div.container div.content ul.social-links li a.twitter {
+    background: url(../img/icons/32/twitter.png);
+  }
+  div.container div.content ul.social-links li a.github {
+    background: url(../img/icons/32/github.png);
+  }
+  div.container div.content ul.social-links li a.linkedin {
+    background: url(../img/icons/32/linkedin.png);
+  }
+  div.container div.content ul.social-links li a.flickr {
+    background: url(../img/icons/32/flickr.png);
+  }
+  div.container div.content ul.social-links li a.skype {
+    background: url(../img/icons/32/skype.png);
+  }
+
+  div.container div.content ul.social-links li {
+    margin: 0 9px 0 0;
+  }
+  div.container div.content ul.social-links li a {
+    /*-webkit-transform: scale(0.8);*/
+    width: 32px;
+    height: 32px;
+  }
 }

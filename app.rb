@@ -1,6 +1,30 @@
 require 'sinatra'
 require 'json'
 
+class Social
+  VARIABLES = [ :name, :link ]
+
+  def self.get_all
+    json = JSON.parse(File.read('content/home.json'))
+
+    json['socials'].map do |social|
+      self.new social
+    end
+  end
+
+  def initialize skill
+    skill.each do |key, variable|
+      instance_variable_set "@#{key}", variable
+    end
+  end
+
+  VARIABLES.each do |variable|
+    define_method variable do
+      instance_variable_get "@#{variable}"
+    end
+  end
+end
+
 class Skill
   VARIABLES = [ :name, :level ]
 
@@ -52,6 +76,7 @@ end
 
 get '/' do
   erb :index, locals: {
-    posts: Post::get_all
+    posts: Post::get_all,
+    socials: Social::get_all
   }
 end
