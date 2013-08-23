@@ -80,3 +80,7 @@ get '/' do
     socials: Social::get_all
   }
 end
+
+not_found do
+  erb :not_found
+end

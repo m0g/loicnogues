@@ -17,8 +17,8 @@
 
               <% post.content.each do |skill| %>
                 <div class="row">
-                  <div class="name col-md-6"><%=skill.name %></div>
-                  <div class="level col-md-6">
+                  <div class="name col-xs-6 col-sm-6 col-md-6"><%=skill.name %></div>
+                  <div class="level col-xs-6 col-sm-6 col-md-6">
                     <div class="progress progress-striped">
                       <div class="bar" style="width: <%=skill.level %>%"></div>
                     </div>
@@ -52,6 +52,10 @@
           <% end %>
 
         </div>
+      <% end %>
+
+      <% if post.name == 'index' %>
+        <img id="keyboard" src="/img/keyboard.png" />
       <% end %>
 
     </div>
