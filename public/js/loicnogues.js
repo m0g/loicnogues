@@ -71,9 +71,22 @@
       }, 0);
     },
 
+    scrollToAnchor: function() {
+      var offset = $(window.location.hash).offset().top;
+
+      setTimeout(function(){
+        $('html, body').animate({
+          scrollTop: offset
+        }, 600);
+      }, 1000);
+    },
+
     events: function() {
       window.addEventListener("load", App.hideUrlBar);
       $(document).keydown(this.keyboardListener);
+
+      if (window.location.hash.length > 0)
+        window.onload = App.scrollToAnchor();
     },
 
     init: function() {

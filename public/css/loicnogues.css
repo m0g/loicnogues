@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url('../fonts/sourcesanspro-bold-webfont.eot');
+  src: url('../fonts/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'),
+       url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'),
+       url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('../fonts/sourcesanspro-regular-webfont.eot');
+  src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'),
+  url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'),
+  url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 ::-webkit-scrollbar { 
   display: none;
 }
@@ -115,10 +140,17 @@ div.container h1 {
   background: #fff200;
   background: rgba(255, 242, 0, 0.8);
   color: #282828;
-  /*font-family: 'Source Sans Pro', sans-serif;*/
+  font-family: "SourceSansPro", sans-serif;
+  font-weight: bold;
   padding: 10px 20px;
   line-height: 35px;
   margin-left: -15px;
+}
+
+div.container p, #skills div.name {
+  font-family: "SourceSansPro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 progress {
