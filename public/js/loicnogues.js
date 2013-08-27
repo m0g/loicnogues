@@ -4,13 +4,14 @@
     scrollTimeout: false,
     scrollAnchor: '',
     scrollDirection: '',
+    scrollType: 'keyboard',
 
     scrollCallback: function() {
-        App.scrollTimeout = false;
-        window.location.replace(
-          window.location.href.split('#')[0] 
-          + '#' + App.scrollAnchor
-        );
+      App.scrollTimeout = false;
+      window.location.replace(
+        window.location.href.split('#')[0] 
+        + '#' + App.scrollAnchor
+      );
     },
 
     scrollAnimate: function (offset) {
@@ -32,8 +33,11 @@
         return false;
       }
 
-      else App.scrollTimeout = false;
+      else if (App.scrollType != 'mousewheel')
+        App.scrollTimeout = false;
 
+      //else if (currentOffset == 0 || currentOffset == $(document).height() - $(window).height())
+      //  App.scrollTimeout = false;
     },
 
     scrollInit: function(e) {
@@ -59,10 +63,26 @@
     },
 
     keyboardListener: function(e) {
-      if (e.keyCode == 38 && !App.scrollTimeout)
+      if (e.keyCode == 38 && !App.scrollTimeout){
+        App.scrollType = 'keyboard';
         App.scrollUp(e);
-      else if (e.keyCode == 40 && !App.scrollTimeout)
+      } else if (e.keyCode == 40 && !App.scrollTimeout){
+        App.scrollType = 'keyboard';
         App.scrollDown(e);
+      }
+    },
+
+    mousewheelListener: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if(e.originalEvent.wheelDelta/120 > 0 && !App.scrollTimeout){
+        App.scrollType = 'mousewheel';
+        App.scrollUp(e);
+      } else if(e.originalEvent.wheelDelta/120 < 0 && !App.scrollTimeout){
+        App.scrollType = 'mousewheel';
+        App.scrollDown(e);
+      }
     },
 
     hideUrlBar: function() {
@@ -83,7 +103,9 @@
 
     events: function() {
       window.addEventListener("load", App.hideUrlBar);
+
       $(document).keydown(this.keyboardListener);
+      $(document).bind('mousewheel', App.mousewheelListener);
 
       if (window.location.hash.length > 0)
         window.onload = App.scrollToAnchor();
