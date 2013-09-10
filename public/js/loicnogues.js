@@ -5,11 +5,9 @@
     scrollAnchor: '',
     scrollDirection: '',
     scrollType: 'keyboard',
-    //mousewheelCounter: 0,
 
     scrollCallback: function() {
       App.scrollTimeout = false;
-      //App.mousewheelCounter = 0;
       $(document).on('mousewheel DOMMouseScroll', App.mousewheelListener);
 
       window.location.replace(
@@ -26,35 +24,14 @@
 
     whereToScroll: function() {
       var currentOffset = $(document).scrollTop(),
-          //lastElement = $(document).height() - $(window).height(),
           elementOffset = Math.floor($(this).offset().top);
-
-      //if (App.scrollType == 'mousewheel')
-      //  App.mousewheelCounter++;
-
-      //console.log('current: '+currentOffset+' element: '+elementOffset+' mousewheelCounter: '+App.mousewheelCounter);
-
-      //if (App.scrollType == 'mousewheel' && App.mousewheelCounter > 1)
-      //  return true;
 
       if ((App.scrollDirection == 'down' && currentOffset < elementOffset)
           || App.scrollDirection == 'up' && currentOffset > elementOffset){
         offset = $(this).offset().top;
 
-        //App.scrollAnchor = $(this).attr('id');
-        //App.scrollAnimate(offset);
         return { offset: offset, anchor: $(this).attr('id')};
       }
-
-      //else App.scrollTimeout = false;
-
-      //else if (App.scrollType != 'mousewheel')
-      //  App.scrollTimeout = false;
-
-      //} else if (currentOffset == elementOffset == 0 || (currentOffset <= lastElement && currentOffset > lastElement - $(window).height())) {
-      //  App.scrollTimeout = false;
-      //}
-
     },
 
     scrollInit: function(e) {
@@ -69,7 +46,6 @@
       else
         toScroll = $('div.container div.page').map(App.whereToScroll);
 
-      //console.log(toScroll[0]);
       if (typeof(toScroll[0]) == 'undefined'){
         App.scrollTimeout = false;
         $(document).on('mousewheel', App.mousewheelListener);
@@ -122,6 +98,13 @@
       }
     },
 
+    swipeListener: function(event, direction, distance, duration, fingerCount) {
+      if (direction == 'up')
+        App.scrollDown(event);
+      else if (direction == 'down')
+        App.scrollUp(event);
+    },
+
     hideUrlBar: function() {
       setTimeout(function(){
         window.scrollTo(0, 0);
@@ -143,7 +126,7 @@
 
       $(document).keydown(App.keyboardListener);
       $(document).on('mousewheel DOMMouseScroll', App.mousewheelListener);
-
+      $(document).swipe({ swipe: App.swipeListener });
     },
 
     init: function() {
