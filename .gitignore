@@ -1,2 +1,9 @@
 *.swp
+*.swo
+*.swn
+*.swm
+*.old
+public/assets/
+public/js/
+public/css/
 dandelion.yml

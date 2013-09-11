@@ -7,8 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/loicnogues.css" rel="stylesheet">
+    <% if ENV['RACK_ENV'] == 'development' %>
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/loicnogues.css" rel="stylesheet">
+    <% else %>
+      <link href="/assets/application.css" rel="stylesheet" />
+    <% end %>
 
     <link rel="shortcut icon" href="favicon.ico">
   </head>
@@ -19,8 +23,14 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/jquery.touchSwipe.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/loicnogues.js"></script>
+
+    <% if ENV['RACK_ENV'] == 'development' %>
+      <script src="js/jquery.touchSwipe.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/loicnogues.js"></script>
+    <% else %>
+      <script src="assets/application.js"></script>
+    <% end %>
+
   </body>
 </html>

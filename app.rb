@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'json'
+require 'sinatra/base'
+require 'sinatra/assetpack'
 
 class Social
   VARIABLES = [ :name, :link ]
@@ -72,6 +74,30 @@ class Post
       instance_variable_get "@#{variable}"
     end
   end
+end
+
+class Loicnogues < Sinatra::Base
+  set :root, File.dirname(__FILE__)
+
+  register Sinatra::AssetPack
+
+  assets {
+    serve '/js', from: 'assets/js'
+    js :application, [
+      '/js/bootstrap.js',
+      '/js/jquery.touchSwipe.js',
+      '/js/loicnogues.js'
+    ]
+
+    serve '/css', from: 'assets/css'
+    css :application, [
+      '/css/bootstrap.css',
+      '/css/loicnogues.css'
+    ]
+
+    js_compression  :uglify    # :jsmin | :yui | :closure | :uglify
+    css_compression :simple   # :simple | :sass | :yui | :sqwish
+  }
 end
 
 get '/' do
