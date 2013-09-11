@@ -3,6 +3,7 @@ require 'json'
 require 'sinatra/base'
 require 'sinatra/assetpack'
 
+
 class Social
   VARIABLES = [ :name, :link ]
 
