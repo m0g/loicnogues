@@ -121,6 +121,27 @@
       }, 1000);
     },
 
+    generateEmail: function() {
+      var coded = "1eTWlf.9e2O@TaP29.Oea",
+      key = "6uUqVjRl8K52vsxacEngJ0WdSXZo9YFh4LfNPO71TMQCyA3zeHBwibtDmrIGkp",
+      shift=coded.length,
+      link="";
+
+      for (i=0; i<coded.length; i++) {
+        if (key.indexOf(coded.charAt(i))==-1) {
+          ltr = coded.charAt(i);
+          link += (ltr);
+        }
+        else {
+          ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length;
+          link += (key.charAt(ltr));
+        }
+      }
+
+      $('a.mail-link').text(link);
+      $('a.mail-link').attr('href', 'mailto:'+link);
+    },
+
     events: function() {
       window.addEventListener("load", App.hideUrlBar);
 
@@ -134,6 +155,8 @@
         window.onload = App.scrollToAnchor();
       else
         this.events();
+
+      this.generateEmail();
     }
   }
 
