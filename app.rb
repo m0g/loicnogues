@@ -85,7 +85,6 @@ class Loicnogues < Sinatra::Base
   assets {
     serve '/js', from: 'assets/js'
     js :application, [
-      '/js/bootstrap.js',
       '/js/jquery.touchSwipe.js',
       '/js/loicnogues.js'
     ]

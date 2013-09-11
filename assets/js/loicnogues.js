@@ -82,8 +82,6 @@
 
       $(document).off('mousewheel DOMMouseScroll');
 
-      console.log(e.originalEvent);
-
       if (typeof(e.originalEvent.wheelDelta) != 'undefined')
         var delta = e.originalEvent.wheelDelta / 120;
       else
