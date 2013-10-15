@@ -10,4 +10,5 @@ exclude:
     - .gitignore
     - dandelion.yml
     - .rvmrc
+    - .ruby-version
 revision_file: .revision
